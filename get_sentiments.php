@@ -1,5 +1,7 @@
 <?php
 
+require_once('get_tweets.php');
+
 class AlchemyAPI {
     
     private $_api_key;
@@ -101,8 +103,7 @@ $alchemyapi = new AlchemyAPI("6be6a589965cd760bb387d2535704ac1f72ae540");
 $target='trump';
 // $text='Wow, Hillary Clinton was SO INSULTING to my supporters, millions of amazing, hard working people. I think it will cost her at the Polls!';
 
-$input = array('AL' => array('Minnesota Democrats try to kick Donald Trump off the state\'s ballot http://cnn.it/2cm7MlD', 'I\'m not sure whether the lesson of this election is that "outrageous" statements matter little, or just matter little from Trump.'),
-               'AK' => array('I hope Trump backer @DrDavidDuke isn\'t too offended at being called a deplorable racist. Civility, people.', 'Gained a lot of followers the last 2 days! Thanks everyone, and welcome! #TeamTrump We are a #BasketOfDeplorables!'));
+$input = $tweetsArr;
 
 $text = array();
 
