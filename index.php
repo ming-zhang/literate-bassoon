@@ -11,10 +11,16 @@
   <script src="js/jquery-jvectormap-world-mill-en.js"></script>
 </head>
 <body>
+  <div id="emotionSelect"></div>
   <div id="world-map" style="width: 600px; height: 400px"></div>
   <script>
     $(function(){
-      $('#world-map').vectorMap({map: 'world_mill_en'});
+      $('#world-map').vectorMap({
+        map: 'world_mill_en',
+        onRegionTipShow: function(e, el){
+          el.html(el.html()+' (display emotion % here)');
+        }
+      });
     });
   </script>
 </body>
