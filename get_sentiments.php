@@ -21,52 +21,34 @@ class AlchemyAPI {
         $this->_base_url = $use_https ? $this->_BASE_HTTPS_URL : $this->_BASE_HTTP_URL;
             
         //Initialize the API Endpoints
-        $this->_ENDPOINTS['sentiment_targeted']['text'] = '/text/TextGetTargetedSentiment';
+        $this->_ENDPOINTS['sentiment_targeted'] = '/text/TextGetTargetedSentiment';
+        $this->_ENDPOINTS['emotion_targeted'] = '/text/TextGetTargetedEmotion';
     }
 
-    /**
-      *    Calculates the targeted sentiment for text, a URL or HTML.
-      *    For an overview, please refer to: http://www.alchemyapi.com/products/features/sentiment-analysis/
-      *    For the docs, please refer to: http://www.alchemyapi.com/api/sentiment-analysis/
-      *    
-      *    INPUT:
-      *    flavor -> which version of the call, i.e. text, url or html.
-      *    data -> the data to analyze, either the text, the url or html code.
-      *    target -> the word or phrase to run sentiment analysis on.
-      *    options -> various parameters that can be used to adjust how the API works, see below for more info on the available options.
-      *    
-      *    Available Options:
-      *    showSourceText    -> 0: disabled, 1: enabled
-      *
-      *    OUTPUT:
-      *    The response, already converted from JSON to a PHP object. 
-    */
-    public function sentiment_targeted($flavor, $data, $target, $options) {
-        //Make sure this request supports the flavor
-        if (!array_key_exists($flavor, $this->_ENDPOINTS['sentiment_targeted'])) {
-            return array('status'=>'ERROR','statusInfo'=>'Targeted sentiment analysis for ' . $flavor . ' not available');
-        }
+    public function sentiment_targeted($data, $target, $options) {
 
         if (!$target) {
             return array('status'=>'ERROR','statusInfo'=>'targeted sentiment requires a non-null target');
         }
 
         //Add the URL encoded data to the options and analyze
-        $options[$flavor] = $data;
-        $options['target'] = $target;
-        return $this->analyze($this->_ENDPOINTS['sentiment_targeted'][$flavor], $options);
+        $options['text'] = $data;
+        $options['targets'] = $target;
+        return $this->analyze($this->_ENDPOINTS['sentiment_targeted'], $options);
     }
 
-    /**
-      *    HTTP Request wrapper that is called by the endpoint functions. This function is not intended to be called through an external interface. 
-      *    It makes the call, then converts the returned JSON string into a PHP object. 
-      *    
-      *    INPUT:
-      *    url -> the full URI encoded url
-      *
-      *    OUTPUT:
-      *    The response, already converted from JSON to a PHP object. 
-    */
+    public function emotion_targeted($data, $target, $options) {
+
+        if (!$target) {
+            return array('status'=>'ERROR','statusInfo'=>'targeted emotion requires a non-null target');
+        }
+
+        //Add the URL encoded data to the options and analyze
+        $options['text'] = $data;
+        $options['targets'] = $target;
+        return $this->analyze($this->_ENDPOINTS['emotion_targeted'], $options);
+    }
+
     private function analyze($endpoint, $params) {
         //Insert the base URL
         $url = $this->_base_url . $endpoint;
@@ -116,29 +98,57 @@ class AlchemyAPI {
 
 $alchemyapi = new AlchemyAPI("6be6a589965cd760bb387d2535704ac1f72ae540");
 
-$target='clinton';
+$target='trump';
+// $text='Wow, Hillary Clinton was SO INSULTING to my supporters, millions of amazing, hard working people. I think it will cost her at the Polls!';
 
-$text='Wow, Hillary Clinton was SO INSULTING to my supporters, millions of amazing, hard working people. I think it will cost her at the Polls!';
+$input = array('AL' => array('Minnesota Democrats try to kick Donald Trump off the state\'s ballot http://cnn.it/2cm7MlD', 'I\'m not sure whether the lesson of this election is that "outrageous" statements matter little, or just matter little from Trump.'),
+               'AK' => array('I hope Trump backer @DrDavidDuke isn\'t too offended at being called a deplorable racist. Civility, people.', 'Gained a lot of followers the last 2 days! Thanks everyone, and welcome! #TeamTrump We are a #BasketOfDeplorables!'));
 
+$text = array();
 
-echo 'Processing text: ', $text, PHP_EOL;
-echo 'Target: ', $target, PHP_EOL;
-echo PHP_EOL;
-
-$response = $alchemyapi->sentiment_targeted('text', $text, $target, null);
-
-if ($response['status'] == 'OK') {
-    echo '## Response Object ##', PHP_EOL;
-    echo print_r($response);
+foreach ($input as $state => $tweets) {
+    $text = implode(" ", $tweets);
 
     echo PHP_EOL;
-    echo '## Targeted Sentiment ##', PHP_EOL;
-    echo 'sentiment: ', $response['docSentiment']['type'], PHP_EOL;
-    if (array_key_exists('score', $response['docSentiment'])) {
-        echo 'score: ', $response['docSentiment']['score'], PHP_EOL;
+    echo PHP_EOL;
+    echo PHP_EOL;
+    echo '###################################', PHP_EOL;
+    echo '#   Location: ', $state, '                  #', PHP_EOL;
+    echo '###################################', PHP_EOL;
+    echo PHP_EOL;
+    echo PHP_EOL;
+
+    echo 'Targeted sentiment analysis', PHP_EOL;
+    echo 'Processing text: ', $text, PHP_EOL;
+    echo 'Target: ', $target, PHP_EOL;
+    echo PHP_EOL;
+
+    $response = $alchemyapi->sentiment_targeted($text, $target, null);
+
+    if ($response['status'] == 'OK') {
+        echo '## Targeted Sentiment ##', PHP_EOL;
+        $sentiment = $response['results'][0]['sentiment'];
+        echo 'sentiment: ', $sentiment['type'], PHP_EOL;
+        echo 'score: ', $sentiment['score'], PHP_EOL;
+    } else {
+        echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
     }
-} else {
-    echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
+
+    echo 'Targeted emotion analysis', PHP_EOL;
+    echo PHP_EOL;
+
+    $response = $alchemyapi->emotion_targeted($text, $target, null);
+
+    if ($response['status'] == 'OK') {
+        echo '## Targeted Emotion ##', PHP_EOL;
+        $emotions = $response['results'][0]['emotions'];
+        foreach ($emotions as $emotion => $score) {
+            echo $emotion, ' => ', $score, PHP_EOL;
+        }
+    } else {
+        echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
+    }
+
 }
 
 ?>
