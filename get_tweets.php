@@ -70,7 +70,9 @@ $consumer_key = '6FRDQlSia5LEtCejHJchikN6S';
 $consumer_secret = 'H9QdUfn8u5ZetSZvU08optZa8OHoNUyezA3rbtF5n3LSmHmiwK';
 
 //$twitter_url = 'search.json?q=trump%20place%3A96683cc9126741d1';
-$twitter_url = 'search/tweets.json?q=trump%20place%3Add9c503d6c35364b';
+$twitter_url = 'search/tweets.json?q=';
+
+$keyword = 'trump';
 
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
@@ -83,19 +85,21 @@ $twitter_proxy = new TwitterProxy(
 );
 // Invoke the get method to retrieve results via a cURL request
 //$tweets = $twitter_proxy->get($twitter_url . $keyword . '&' . $language . '&' . $time . '&' . $count);
-$tweets = $twitter_proxy->get($twitter_url);
 
-$t = json_decode($tweets);
 
-$tweetsArr2 = array();
 
-echo var_dump($t);
+foreach ($states as $state => $id) {
 
-foreach ($tweetsArr as $state) {
+	$tweets = $twitter_proxy->get($twitter_url . $keyword . '%20place%3A' . $id);
+	$t = json_decode($tweets);
+	$tweetsArr2 = array();
+
+
+
 	for ($x = 0; $x <= count($t->{'statuses'}); $x++) {
 
-	array_push($tweetsArr2, $t->{'statuses'}[$x]->{'text'});
-	$tweetsArr[$state] = $tweetsArr2;
+		array_push($tweetsArr2, $t->{'statuses'}[$x]->{'text'});
+		$tweetsArr[$state] = $tweetsArr2;
 
 	}
  
