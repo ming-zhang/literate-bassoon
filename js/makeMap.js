@@ -1,6 +1,6 @@
 function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
   return "<h4>"+n+"</h4><table>"+
-  "<tr><td>Percentage:</td><td>"+(d.feeling)+"%</td></tr>"
+  "<tr><td>Percentage:</td><td>"+(d.feeling)+"%</td></tr>"+
   "</table>";
 }
 
@@ -138,8 +138,9 @@ function setStates() {
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 	.forEach(function(d){
 	  //var feeling=getEmotionVals(0,0);
-	  if (d == "PA" || d = "TX" || d = "WY" || d = "AL" ||d = "NY") {
+	  if (d == "PA" || d == "TX" || d == "WY" || d == "AL" ||d == "NY") {
 	  	var feeling=getEmoNum("disgust", abbrState(d, 'name'));
+        console.log(feeling+","+d);
 	  } else {
 	  	var feeling = getEmotionVals();
 	  }
