@@ -105,50 +105,33 @@ $target='trump';
 
 $input = $tweetsArr;
 
-$text = array();
+$output = array();
 
 foreach ($input as $state => $tweets) {
     $text = implode(" ", $tweets);
-
-    echo PHP_EOL;
-    echo PHP_EOL;
-    echo PHP_EOL;
-    echo '###################################', PHP_EOL;
-    echo '#   Location: ', $state, '                  #', PHP_EOL;
-    echo '###################################', PHP_EOL;
-    echo PHP_EOL;
-    echo PHP_EOL;
-
-    echo 'Targeted sentiment analysis', PHP_EOL;
-    echo 'Processing text: ', $text, PHP_EOL;
-    echo 'Target: ', $target, PHP_EOL;
-    echo PHP_EOL;
+    $feelings = array();
 
     $response = $alchemyapi->sentiment_targeted($text, $target, null);
 
     if ($response['status'] == 'OK') {
-        echo '## Targeted Sentiment ##', PHP_EOL;
         $sentiment = $response['results'][0]['sentiment'];
-        echo 'sentiment: ', $sentiment['type'], PHP_EOL;
-        echo 'score: ', $sentiment['score'], PHP_EOL;
+        $feelings['sentiment'] = $sentiment['score'];
     } else {
         echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
     }
-
-    echo 'Targeted emotion analysis', PHP_EOL;
-    echo PHP_EOL;
 
     $response = $alchemyapi->emotion_targeted($text, $target, null);
 
     if ($response['status'] == 'OK') {
-        echo '## Targeted Emotion ##', PHP_EOL;
         $emotions = $response['results'][0]['emotions'];
         foreach ($emotions as $emotion => $score) {
-            echo $emotion, ' => ', $score, PHP_EOL;
+            $feelings[$emotion] = $score;
         }
     } else {
         echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
     }
+
+    $output[$state] = $feelings
 
 }
 
