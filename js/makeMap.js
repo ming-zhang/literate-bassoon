@@ -45,7 +45,7 @@ function getEmoNum(emotion, state) {
            emoNum = data;
         },
         error:   function(jqXHR, textStatus, errorThrown) {
-            alert("Error, status = " + textStatus + ", " +
+            console.log("Error, status = " + textStatus + ", " +
                   "error thrown: " + errorThrown
             );
         }
