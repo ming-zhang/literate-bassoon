@@ -37,7 +37,7 @@ function getEmoNum(emotion, state) {
 	var emoNum;
 	$.ajax({
         type:     	"POST",
-        data: 		{state: state, emo: emo},
+        data: 		{state: state, emo: emotion},
         async: 		 false,
         url:     "../get_emotion.php",
         success: function(data) {
