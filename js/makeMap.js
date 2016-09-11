@@ -9,7 +9,7 @@ function emo_score() {
 			
 		};
 
-		var test = <?php echo json_encode($output); ?>;
+		var test = decodeURIComponent("<?php echo json_encode($output); ?>");
 		console.log(test);
 		/*
 		$.ajax({
