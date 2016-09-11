@@ -28,6 +28,9 @@
     <!-- Theme CSS -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
+    <!-- jQuery -->
+    <script src="js/jquery-3.0.0.min.js"></script>
+
     <!-- Map Javascript -->
 
     <script src="js/jquery-jvectormap-2.0.3.min.js"></script>
@@ -277,9 +280,6 @@
             </ul>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery-3.0.0.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
