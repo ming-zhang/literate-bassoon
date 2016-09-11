@@ -13,7 +13,7 @@ function emo_score() {
         async: 	  false,
         url:     "../get_sentiments.php",
         success: function(data) {
-            var emos = $.parseJSON(data);
+            //var emos = $.parseJSON(data);
             console.log(data + ",1");
 /*
             for (var i = 0; i < 50; i++) {
