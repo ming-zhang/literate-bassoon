@@ -33,7 +33,7 @@ function emo_score() {
 }
 
 function getEmotionVals(emotion, state) {
-	//emo_score();
+	emo_score();
 	return Math.round(100*Math.random());
 }
 
