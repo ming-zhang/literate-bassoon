@@ -71,7 +71,7 @@ uStates.draw("#statesvg", states, tooltipHtml);
 d3.select(self.frameElement).style("height", "600px");
 
 function update(){
-	var svg = d3.select("#svg").transition();
+	var svg = d3.select("#statesvg").transition();
 	uStates.draw("#statesvg", states, tooltipHtml);
 
 d3.select(self.frameElement).style("height", "600px");
