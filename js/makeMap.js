@@ -43,6 +43,11 @@ function getEmoNum(emotion, state) {
         success: function(data) {
            console.log(data);
            emoNum = data;
+        },
+        error:   function(jqXHR, textStatus, errorThrown) {
+            alert("Error, status = " + textStatus + ", " +
+                  "error thrown: " + errorThrown
+            );
         }
     });
     return emoNum;
@@ -137,7 +142,6 @@ function setStates() {
 	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 	.forEach(function(d){
-	  //var feeling=getEmotionVals(0,0);
 	  if (d == "PA" || d == "TX" || d == "WY" || d == "AL" ||d == "NY") {
 	  	var feeling=getEmoNum("disgust", abbrState(d, 'name'))*100;
         console.log(feeling+","+d);
