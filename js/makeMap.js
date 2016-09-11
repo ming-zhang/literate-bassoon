@@ -139,12 +139,12 @@ function setStates() {
 	.forEach(function(d){
 	  //var feeling=getEmotionVals(0,0);
 	  if (d == "PA" || d == "TX" || d == "WY" || d == "AL" ||d == "NY") {
-	  	var feeling=getEmoNum("disgust", abbrState(d, 'name'));
+	  	var feeling=getEmoNum("disgust", abbrState(d, 'name'))*100;
         console.log(feeling+","+d);
 	  } else {
 	  	var feeling = getEmotionVals();
 	  }
-	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")*feeling}; 
+	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")*(feeling/100)}; 
 	});
 	return states;
 }
