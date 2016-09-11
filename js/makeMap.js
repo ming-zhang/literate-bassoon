@@ -8,15 +8,19 @@ function emo_score() {
 		var dict = {
 			
 		};
+
+		var test = <?php echo json_encode($output); ?>;
+		console.log(test);
+		/*
 		$.ajax({
-        type:     "GET",
+        type:     "POST",
         async: 	  false,
         url:     "../get_sentiments.php",
         success: function(data) {
             //var emos = $.parseJSON(data);
             console.log(data);
 
-            /*for (var i = 0; i < 50; i++) {
+            for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
             		if(key != null) {
             			dict[key] = {};
@@ -25,11 +29,11 @@ function emo_score() {
             	}
                 
                 
-            }*/
+            }
 
 
         }
-    });
+    });*/
 } 
 
 function getEmotionVals(emotion, state) {
