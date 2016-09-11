@@ -33,7 +33,7 @@ function emo_score() {
 }
 
 function getEmotionVals(emotion, state) {
-	emo_score();
+	//emo_score();
 	return Math.round(100*Math.random());
 }
 
@@ -69,3 +69,10 @@ var states ={};
 uStates.draw("#statesvg", states, tooltipHtml);
 
 d3.select(self.frameElement).style("height", "600px");
+
+function update(){
+	var svg = d3.select("#svg").transition();
+	uStates.draw("#statesvg", states, tooltipHtml);
+
+d3.select(self.frameElement).style("height", "600px");
+}

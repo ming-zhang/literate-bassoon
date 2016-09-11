@@ -113,7 +113,7 @@
 
         <div class="emoSelect">
             <label>
-                <input id="happy" type="radio" name="emo" value="happy" hidden><span>Happy</span>
+                <input id="happy" type="radio" name="emo" value="happy" onClick="update()" hidden><span>Happy</span>
             </label>
         </div>
 
