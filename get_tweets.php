@@ -86,7 +86,7 @@ $twitter_proxy = new TwitterProxy(
 // Invoke the get method to retrieve results via a cURL request
 //$tweets = $twitter_proxy->get($twitter_url . $keyword . '&' . $language . '&' . $time . '&' . $count);
 
-
+$allTweets = array();
 
 foreach ($states as $state => $id) {
 
@@ -99,7 +99,7 @@ foreach ($states as $state => $id) {
 	for ($x = 0; $x <= count($t->{'statuses'}); $x++) {
 
 		array_push($tweetsArr2, $t->{'statuses'}[$x]->{'text'});
-		$tweetsArr[$state] = $tweetsArr2;
+		$allTweets[$state] = $tweetsArr2;
 
 	}
  
