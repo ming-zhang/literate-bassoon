@@ -64,7 +64,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#happy">Happy</a>
+                        <a class="page-scroll" href="#joy">Joy</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#sad">Sad</a>
@@ -116,19 +116,7 @@
         </div>
     </header>
 
-    <section id="download" class="download bg-primary text-center">
-
-        <div class="emoSelect">
-            <label>
-                <input id="happy" type="radio" name="emo" value="happy" hidden><span>Happy</span>
-            </label>
-        </div>
-
-        <div class="emoSelect">
-            <label>
-                <input id="sad" type="radio" name="emo" value="sad" hidden><span>Sad</span>
-            </label>
-        </div>
+    <section id="joy" class="download bg-primary text-center">
 
         <div id="tooltip"></div><!-- div to hold tooltip. -->
         <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->

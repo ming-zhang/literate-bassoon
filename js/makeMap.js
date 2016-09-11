@@ -162,7 +162,7 @@ var states ={};
   states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")(feeling/100)}; 
 });*/
 
-/* draw states on id #statesvg */ 
-uStates.draw("#statesvg", states, tooltipHtml);
+/* draw states on id #statesvg-joy */ 
+uStates.draw("#statesvg-joy", states, tooltipHtml);
 
 d3.select(self.frameElement).style("height", "600px");
