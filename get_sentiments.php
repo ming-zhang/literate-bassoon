@@ -135,4 +135,6 @@ foreach ($input as $state => $tweets) {
 
 }
 
+echo json_encode($output)
+
 ?>
