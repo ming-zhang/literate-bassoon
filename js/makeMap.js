@@ -14,7 +14,7 @@ function emo_score() {
         url:     "../get_sentiments.php",
         success: function(data) {
             //var emos = $.parseJSON(data);
-            console.log(data);
+            //console.log(data);
 
             /*for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
@@ -33,7 +33,7 @@ function emo_score() {
 } 
 
 function getEmotionVals(emotion, state) {
-	emo_score();
+	//emo_score();
 	return Math.round(100*Math.random());
 }
 
