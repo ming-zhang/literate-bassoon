@@ -48,8 +48,7 @@ function getEmoNum(emotion, state) {
     return emoNum;
 }
 
-function getEmotionVals(emotion, state) {
-	emo_score();
+function getEmotionVals() {
 	return Math.round(100*Math.random());
 }
 
@@ -139,7 +138,11 @@ function setStates() {
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 	.forEach(function(d){
 	  //var feeling=getEmotionVals(0,0);
-	  var feeling=getEmoNum("disgust", abbrState(d, 'name'));
+	  if (d == "PA" || d = "TX" || d = "WY" || d = "AL" ||d = "NY") {
+	  	var feeling=getEmoNum("disgust", abbrState(d, 'name'));
+	  } else {
+	  	var feeling = getEmotionVals();
+	  }
 	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")*feeling}; 
 	});
 	return states;
