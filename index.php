@@ -19,14 +19,14 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
+    <!-- Theme CSS -->
+    <link href="css/new-age.min.css" rel="stylesheet">
+
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/simple-line-icons.css">
     <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
     <link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
-
-    <!-- Theme CSS -->
-    <link href="css/new-age.min.css" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="js/jquery-3.0.0.min.js"></script>
