@@ -95,6 +95,13 @@
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
                                 <div class="screen">
+
+                                    <form>
+                                     Enter the topic you would like to search for:<br>
+                                    <input type="text" name="keyword">
+                                    <br>
+                                    </form>
+
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                                     <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
                                 </div>
