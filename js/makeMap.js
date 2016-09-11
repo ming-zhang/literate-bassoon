@@ -15,7 +15,7 @@ function emo_score() {
         success: function(data) {
             var emos = $.parseJSON(data);
             console.log(emos);
-
+/*
             for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
             		if(key != null) {
@@ -25,7 +25,7 @@ function emo_score() {
             	}
                 
                 
-            }
+            }*/
 
 
         }
