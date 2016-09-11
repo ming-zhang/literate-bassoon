@@ -14,7 +14,7 @@ function emo_score() {
         url:     "../get_sentiments.php",
         success: function(data) {
             var emos = $.parseJSON(data);
-            console.log(emos);
+            console.log(emos + ",1");
 /*
             for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
