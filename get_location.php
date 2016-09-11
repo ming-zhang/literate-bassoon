@@ -90,6 +90,5 @@ foreach ($states as $state) {
 	$states[$state] = $id;
 }
 
-echo var_dump($states);
 
 

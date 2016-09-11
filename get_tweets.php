@@ -105,7 +105,6 @@ foreach ($states as $state => $id) {
  
 }
 
-echo var_dump($tweetsArr); 
 
 ?>
 
