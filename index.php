@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>Emogram</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -127,7 +127,7 @@
         <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
         <script src="js/uStates.js"></script> <!-- creates uStates. -->
         <script type="text/javascript" src="js/makeMap.js"></script>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
