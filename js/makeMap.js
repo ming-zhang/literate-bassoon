@@ -3,7 +3,7 @@ function tooltipHtml(n, d){ /* function to create html content string in tooltip
   "<tr><td>Percentage:</td><td>"+(d.feeling)+"%</td></tr>"
   "</table>";
 }
-
+/*
 function emo_score() {
 		var dict = {
 			
@@ -16,7 +16,7 @@ function emo_score() {
             //var emos = $.parseJSON(data);
             //console.log(data);
 
-            /*for (var i = 0; i < 50; i++) {
+            for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
             		if(key != null) {
             			dict[key] = {};
@@ -25,12 +25,12 @@ function emo_score() {
             	}
                 
                 
-            }*/
+            }
 
 
         }
     });
-} 
+} */
 
 function getEmotionVals(emotion, state) {
 	//emo_score();
