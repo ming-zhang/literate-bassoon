@@ -1,6 +1,6 @@
 function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
   return "<h4>"+n+"</h4><table>"+
-  "<tr><td>Percentage:</td><td>"+(d.feeling)+"%</td></tr>"+
+  "<tr><td>Percentage:</td><td>"+(d.feeling)+"%</td></tr>"
   "</table>";
 }
 
