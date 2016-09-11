@@ -98,7 +98,7 @@
 
                                     <form>
                                      Enter the topic you would like to search for:<br>
-                                    <input type="text" name="keyword">
+                                    <input type="text" name="keyword" style="color:black">
                                     <br>
                                     </form>
 
