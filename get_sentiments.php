@@ -98,7 +98,7 @@ class AlchemyAPI {
     }
 }
 
-$alchemyapi = new AlchemyAPI("6be6a589965cd760bb387d2535704ac1f72ae540");
+$alchemyapi = new AlchemyAPI("4ca9811dd1f1bcb29fe5c8897259566023020954");
 
 $target='trump';
 // $text='Wow, Hillary Clinton was SO INSULTING to my supporters, millions of amazing, hard working people. I think it will cost her at the Polls!';
