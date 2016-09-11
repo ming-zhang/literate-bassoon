@@ -64,10 +64,10 @@ $states = array(
 );
 
 // Twitter OAuth Config options
-$oauth_access_token = '774736384104009731-1DrC9R819JL1YVo2SHhJRK5KZ98AvnN';
-$oauth_access_token_secret = 'ZmSU1E18mFaZSPGax67zyIsvFCJ92DxhddBJwaX9XYkKQ';
-$consumer_key = '6FRDQlSia5LEtCejHJchikN6S';
-$consumer_secret = 'H9QdUfn8u5ZetSZvU08optZa8OHoNUyezA3rbtF5n3LSmHmiwK';
+$oauth_access_token = '261161981-PEoTMlyGLme0h3mYH5LRRlIAcaeUSiKQHIdkQOIk';
+$oauth_access_token_secret = 'E6xJp9RVS4VvviKGSPheyHEksY2P6t3rQPHgVwGm6MLU0';
+$consumer_key = 'bmuK144ogL41ekQdHPTRGjfIA';
+$consumer_secret = 's1U0kav8D2DcNwMzChR3X3mcS3AfUKgRNDxFbIVBQyIoVNrXys';
 
 
 $twitter_url = 'geo/search.json?query=';
