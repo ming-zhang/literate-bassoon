@@ -131,7 +131,7 @@ foreach ($input as $state => $tweets) {
         echo 'Error in the targeted sentiment analysis call: ', $response['statusInfo'];
     }
 
-    $output[$state] = $feelings
+    $output[$state] = $feelings;
 
 }
 
