@@ -45,7 +45,7 @@ function getEmoNum(emotion, state) {
            emoNum = data;
         }
     });
-    return paresInt(emoNum);
+    return emoNum;
 }
 
 function getEmotionVals(emotion, state) {
