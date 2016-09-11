@@ -64,10 +64,10 @@ $states = array(
 );
 
 // Twitter OAuth Config options
-$oauth_access_token = '261161981-PEoTMlyGLme0h3mYH5LRRlIAcaeUSiKQHIdkQOIk';
-$oauth_access_token_secret = 'E6xJp9RVS4VvviKGSPheyHEksY2P6t3rQPHgVwGm6MLU0';
-$consumer_key = 'bmuK144ogL41ekQdHPTRGjfIA';
-$consumer_secret = 's1U0kav8D2DcNwMzChR3X3mcS3AfUKgRNDxFbIVBQyIoVNrXys';
+$oauth_access_token = '4862754053-7rnx7UvnVD8gKnMMbopYt2pxDRXbrQ59vaE4yp4';
+$oauth_access_token_secret = 'W0XnbCL3InPBBhZwkgChw4TAHcJ0DHp9OiKGMmxoVeEVb';
+$consumer_key = 'IpDBihCU82eZpKYQsywEgexS7';
+$consumer_secret = 'tpaSOQaXBXvlikjAyuDwrxBVfHYtVQ7sFmY9CYZJaLz1YcOyHf';
 
 
 $twitter_url = 'geo/search.json?query=';
@@ -83,12 +83,15 @@ $twitter_proxy = new TwitterProxy(
 // Invoke the get method to retrieve results via a cURL request
 //$tweets = $twitter_proxy->get($twitter_url . $keyword . '&' . $language . '&' . $time . '&' . $count);
 
+$states_id = array();
+
 foreach ($states as $state) {
 	$tweets = $twitter_proxy->get($twitter_url . $state);
 	$t = json_decode($tweets);
 	$id = $t->{'result'}->{'places'}[0]->{'id'};
-	$states[$state] = $id;
+	$states_id[$state] = $id;
 }
+
 
 
 
