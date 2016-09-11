@@ -140,7 +140,7 @@ function setStates() {
 	.forEach(function(d){
 	  //var feeling=getEmotionVals(0,0);
 	  var feeling=getEmoNum("disgust", abbrState(d, 'name'));
-	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")feeling}; 
+	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")*feeling}; 
 	});
 	return states;
 }
