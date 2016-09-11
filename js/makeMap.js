@@ -69,13 +69,3 @@ var states ={};
 uStates.draw("#statesvg", states, tooltipHtml);
 
 d3.select(self.frameElement).style("height", "600px");
-
-function update(){
-	d3.select(id).selectAll(".state").transition();
-	d3.select(id).data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
-			.style("fill",function(d){ return data[d.id].color; })
-			.on("mouseover", mouseOver).on("mouseout", mouseOut);
-	uStates.draw("#statesvg", states, tooltipHtml);
-
-d3.select(self.frameElement).style("height", "600px");
-}
