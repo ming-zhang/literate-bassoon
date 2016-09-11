@@ -123,6 +123,41 @@
             </label>
         </div>
 
+        <script type="text/javascript">
+
+        function emo_score() {
+    var dict = {
+      
+    };
+
+    var test = '<?php echo json_encode($output); ?>';
+    console.log(test);
+    /*
+    $.ajax({
+        type:     "POST",
+        async:    false,
+        url:     "../get_sentiments.php",
+        success: function(data) {
+            //var emos = $.parseJSON(data);
+            console.log(data);
+
+            for (var i = 0; i < 50; i++) {
+              for (var key in emos[i].state) {
+                if(key != null) {
+                  dict[key] = {};
+                  console.log(1);
+                
+              }
+                
+                
+            }
+
+
+        }
+    });*/
+} 
+        </script>
+
         <div id="tooltip"></div><!-- div to hold tooltip. -->
         <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
         <script src="js/uStates.js"></script> <!-- creates uStates. -->
