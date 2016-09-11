@@ -4,6 +4,10 @@ function tooltipHtml(n, d){ /* function to create html content string in tooltip
   "</table>";
 }
 
+function getEmotionVals(emotion, state) {
+	return Math.round(100*Math.random());
+}
+
 var states ={}; 
 ["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
 "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
@@ -11,7 +15,7 @@ var states ={};
 "CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
 "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 .forEach(function(d){
-  var feeling=Math.round(100*Math.random());
+  var feeling=getEmotionVals(0,0);
   states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")(feeling/100)}; 
 });
 
