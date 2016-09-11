@@ -9,7 +9,7 @@ function emo_score() {
 			
 		};
 		$.ajax({
-        type:     "POST",
+        type:     "GET",
         async: 	  false,
         url:     "../get_sentiments.php",
         success: function(data) {
