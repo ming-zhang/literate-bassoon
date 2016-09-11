@@ -73,5 +73,4 @@
 			.on("mouseover", mouseOver).on("mouseout", mouseOut);
 	}
 	this.uStates=uStates;
-	console.log(1);
 })();
