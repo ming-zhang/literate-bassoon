@@ -4,11 +4,39 @@ function tooltipHtml(n, d){ /* function to create html content string in tooltip
   "</table>";
 }
 
+function emo_score() {
+		var dict = {
+			
+		};
+		$.ajax({
+        type:     "POST",
+        async: 	  false,
+        url:     "../get_sentiments.php",
+        success: function(data) {
+            var emos = $.parseJSON(data);
+
+            for (var i = 0; i < 50; i++) {
+            	for (var key in emos[i].state) {
+            		if(key !== null) {
+            			dict[key] = {};
+            			console.log(1);
+            		}
+            	}
+                
+                
+            }
+
+
+        }
+    });
+} 
+
 function getEmotionVals(emotion, state) {
+	emo_score();
 	return Math.round(100*Math.random());
 }
 
-var states ={}; 
+var states ={};
 ["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
 "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
 "MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT", 
