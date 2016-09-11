@@ -14,13 +14,13 @@
 <body>
   <div class = "emoSelect">
     <label>
-        <input id = "happy" type="radio" value = "happy" hidden><span>Happy</span>
+        <input id = "happy" type="radio" name="emo" value = "happy" hidden><span>Happy</span>
       </label>
   </div>
 
   <div class = "emoSelect">
     <label>
-        <input id = "sad" type="radio"  value = "sad" hidden><span>Sad</span>
+        <input id = "sad" type="radio" name="emo" value = "sad" hidden><span>Sad</span>
       </label>
   </div>
 

@@ -1,3 +1,36 @@
+.emoSelect {
+    background-color: #46D690;
+    color: black;
+    overflow:auto;
+    border-radius: 10px;
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.emoSelect label {
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.emoSelect label span {
+    display:block;
+    font-weight: bolder;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.emoSelect input:checked + span{
+    background-color: green;
+    color: white;
+}
+
+
 .state{
     fill: none;
     stroke: #a9a9a9;
