@@ -119,7 +119,7 @@
     <section id="joy" class="download bg-primary text-center">
 
         <div id="tooltip"></div><!-- div to hold tooltip. -->
-        <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+        <svg width="960" height="600" id="statesvg-joy"></svg> <!-- svg to hold the map. -->
         <script src="js/uStates.js"></script> <!-- creates uStates. -->
         <script type="text/javascript" src="js/makeMap.js"></script>
 
