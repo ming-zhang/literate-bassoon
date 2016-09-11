@@ -4,6 +4,7 @@ function tooltipHtml(n, d){ /* function to create html content string in tooltip
   "</table>";
 }
 
+/*
 function emo_score() {
 		var dict = {
 			
@@ -15,7 +16,7 @@ function emo_score() {
         success: function(data) {
             var emos = $.parseJSON(data);
             console.log(emos);
-/*
+
             for (var i = 0; i < 50; i++) {
             	for (var key in emos[i].state) {
             		if(key != null) {
@@ -25,9 +26,21 @@ function emo_score() {
             	}
                 
                 
-            }*/
+            }
 
 
+        }
+    });
+}*/
+
+function getEmoNum(emotion, state) {
+	$.ajax({
+        type:     	"POST",
+        data: 		{state: state, emo: emo},
+        async: 		 false,
+        url:     "../get_emotion.php",
+        success: function(data) {
+           console.log(data);
         }
     });
 }
@@ -45,7 +58,8 @@ function setStates() {
 	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 	.forEach(function(d){
-	  var feeling=getEmotionVals(0,0);
+	  //var feeling=getEmotionVals(0,0);
+	  var feeling=getEmoNum("disgust", "Texas");
 	  states[d]={feeling:feeling, color:d3.interpolate("#ffffcc", "#800026")(feeling/100)}; 
 	});
 	return states;
