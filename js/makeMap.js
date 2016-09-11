@@ -28,6 +28,9 @@ function emo_score() {
             }*/
 
 
+        },
+        error: function() {
+        	alert("problem");
         }
     });
 }
